@@ -152,3 +152,39 @@
 //? } else {
 //?   emitter.emit("message", "Вы не указали сообщение");
 //? }
+
+//!---------------     STREAM     ---------------
+//* const fs = require("fs");
+//* const path = require("path");
+//? const stream = fs.createReadStream(path.resolve("test.txt"), {
+//?   encoding: "utf-8",
+//? });
+//? stream.on("data", (chunk) => {
+//?   console.log(chunk);
+//? });
+//? stream.on("end", () => console.log("Закончили читать"));
+//? stream.on("open", () => console.log("Начали читать"));
+//? stream.on("error", (err) => console.log(err));
+
+//? const writableStream = fs.createWriteStream(path.resolve("test2.txt"));
+//? for (let i = 0; i < 20; i++) {
+//?   writableStream.write(i + "\n");
+//? }
+//? writableStream.end();
+//? writableStream.close();
+//? writableStream.destroy();
+//? writableStream.on("error");
+
+//!---------------     HTTP     ---------------
+// const http = require("http");
+// const server = http.createServer((req, res) => {
+//   if (req.url === "/users") {
+//     res.end("USERS");
+//   } else if (req.url === "/posts") {
+//     res.end("POSTS");
+//   } else {
+//     res.end("OTHERS");
+//   }
+// });
+// const PORT = 5000;
+// server.listen(PORT, () => console.log(`Server started on PORT:${PORT}`));
